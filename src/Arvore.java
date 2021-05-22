@@ -1,4 +1,4 @@
-package arvores;
+package src;
 
 public class Arvore<T> {
 	private NoArvore<T> raiz;
@@ -37,4 +37,13 @@ public class Arvore<T> {
 			return this.raiz.pertence(procurado);
 		}
 	}
+
+	public int getAltura() {
+		return raiz.maiorAlturaArvore(0);
+	}
+
+	public int getNivelNo(T noProcurado) {
+		return raiz.alturaNoBuscado(noProcurado, 0);
+	}
+
 }
