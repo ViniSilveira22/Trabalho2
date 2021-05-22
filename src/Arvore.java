@@ -1,4 +1,4 @@
-package arvores;
+package src;
 
 public class Arvore<T> {
 	private NoArvore<T> raiz;
@@ -39,41 +39,11 @@ public class Arvore<T> {
 	}
 
 	public int getAltura() {
-		return raiz.getAlturaNo(0);
+		return raiz.maiorAlturaArvore(0);
 	}
 
-	/*
-	public int getAltura() {
-        NoArvore<T> altura = this.getRaiz();
-
-        int count = 0;
-        int maior = 0;
-
-        if (altura == null) {
-            return -1;
-        }
-        while (altura != null) {
-            System.out.println(altura);
-
-            if (altura.getFilho() != null) {
-                count++;
-                altura = altura.getFilho();
-            } else {
-                if (altura.getIrmao() != null) {
-                    altura = altura.getIrmao();
-                } else {
-                    altura = altura.getPai().getIrmao();
-                    if (count > maior) {
-                        maior = count;
-                        count = 0;
-                    }
-                }
-            }
-        }
-        return maior;
-
-    }
-	*/
-
+	public int getNivelNo(T noProcurado) {
+		return raiz.alturaNoBuscado(noProcurado, 0);
+	}
 
 }

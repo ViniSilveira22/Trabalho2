@@ -1,4 +1,4 @@
-package arvores;
+package src;
 
 public class NoArvore<T> {
     private T info;
@@ -7,6 +7,7 @@ public class NoArvore<T> {
     private NoArvore<T> pai;
 
 	private static int altura = 0;
+    private static int buscadoAltura = -1;
 
     public NoArvore(T info) {
         super();
@@ -62,27 +63,48 @@ public class NoArvore<T> {
         return noBuscado;
     }
 
-	public int getAlturaNo(int index) {
+	public int maiorAlturaArvore(int index) {
 		if (filho != null) {
-			getAndIncrementAlturaNo(index, filho);
+			getAndIncrementAlturaNo(filho, index);
 		}
 		
 		if (irmao != null) {
-			irmao.getAlturaNo(index);
+			irmao.maiorAlturaArvore(index);
 		}
 		
 		return setAltura(index);
 	}
 
-	private int setAltura(int index) {
+	public int alturaNoBuscado(T info, int index) {
+		if (this.info.equals(info)) {
+			buscadoAltura = index;
+		};
+
+		if (filho != null) {
+			getAndIncrementAlturaNo(filho, index, info);
+		}
+		
+		if (irmao != null) {
+			irmao.alturaNoBuscado(info, index);
+		}
+
+		return buscadoAltura;
+	}
+
+	private void getAndIncrementAlturaNo(NoArvore<T> filho, int index) {
+		index ++;
+		filho.maiorAlturaArvore(index);
+	}
+
+    private void getAndIncrementAlturaNo(NoArvore<T> filho, int index, T info) {
+		index ++;
+		filho.alturaNoBuscado(info, index);
+	}
+
+    private int setAltura(int index) {
 		if (altura < index)
 			altura = index;
 		return altura;
-	}
-
-	private void getAndIncrementAlturaNo(int index, NoArvore<T> filho) {
-		index ++;
-		filho.getAlturaNo(index);
 	}
 
     public NoArvore<T> getFilho() {
