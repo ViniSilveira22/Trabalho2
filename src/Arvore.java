@@ -42,11 +42,11 @@ public class Arvore<T> {
 		return raiz.maiorAlturaArvore(0);
 	}
 
-	public int getNivelNo(T noProcurado) {
+	public int getNivel(T noProcurado) {
 		return raiz.alturaNoBuscado(noProcurado, 0);
 	}
 
-	public boolean isBalanceado() {
+	public boolean isBalanceada() {
 		return raiz.isBalanceadoNo();
 	}
 
