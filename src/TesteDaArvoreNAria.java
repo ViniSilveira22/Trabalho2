@@ -16,8 +16,12 @@ public class TesteDaArvoreNAria {
 		NoArvore<Integer> n5 = new NoArvore<Integer>(5);
 		NoArvore<Integer> n6 = new NoArvore<Integer>(6);
 		NoArvore<Integer> n7 = new NoArvore<Integer>(7);
-
+		NoArvore<Integer> n11 = new NoArvore<Integer>(11);
+		NoArvore<Integer> n12 = new NoArvore<Integer>(12);
 		NoArvore<Integer> n2 = new NoArvore<Integer>(2);
+
+		n11.inserirFilho(n12);
+		n5.inserirFilho(n11);
 		n2.inserirFilho(n7);
 		n2.inserirFilho(n6);
 		n2.inserirFilho(n5);

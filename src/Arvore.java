@@ -37,4 +37,17 @@ public class Arvore<T> {
 			return this.raiz.pertence(procurado);
 		}
 	}
+
+	public int getAltura() {
+		return raiz.maiorAlturaArvore(0);
+	}
+
+	public int getNivelNo(T noProcurado) {
+		return raiz.alturaNoBuscado(noProcurado, 0);
+	}
+
+	public boolean isBalanceado() {
+		return raiz.isBalanceadoNo();
+	}
+
 }
