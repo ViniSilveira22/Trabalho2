@@ -1,4 +1,4 @@
-package arvores;
+package src;
 
 public class Arvore<T> {
 	private NoArvore<T> raiz;

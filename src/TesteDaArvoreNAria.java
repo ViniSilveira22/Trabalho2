@@ -1,4 +1,4 @@
-package arvores;
+package src;
 
 public class TesteDaArvoreNAria {
 	
@@ -33,9 +33,8 @@ public class TesteDaArvoreNAria {
 
 		Arvore<Integer> a = new Arvore<>();
 		a.setRaiz(n1);
-		System.out.println(a.toString());
-		System.out.println("250 (null) = "+a.pertence(250));
-		System.out.println("8 = "+a.pertence(8));
-		System.out.println("10 = "+a.pertence(10));
+		System.out.println(a.getAltura());
+		System.out.println(a.getNivelNo(n11.getInfo()));
+		System.out.println(a.isBalanceado());
 	}
 }
