@@ -1,10 +1,10 @@
 package src;
 
 public class TesteDaArvoreNAria {
-	
+
 	public static void main(String args[]) {
 		NoArvore<Integer> n9 = new NoArvore<Integer>(9);
-		NoArvore<Integer> n10 = new NoArvore<Integer>(10);
+		NoArvore<Integer> n10 = new NoArvore<Integer>(10);	
 		NoArvore<Integer> n4 = new NoArvore<Integer>(4);
 		n4.inserirFilho(n10);
 		n4.inserirFilho(n9);
@@ -20,10 +20,10 @@ public class TesteDaArvoreNAria {
 		NoArvore<Integer> n12 = new NoArvore<Integer>(12);
 		NoArvore<Integer> n2 = new NoArvore<Integer>(2);
 
-		n11.inserirFilho(n12);
-		n5.inserirFilho(n11);
 		n2.inserirFilho(n7);
 		n2.inserirFilho(n6);
+		n11.inserirFilho(n12);
+		n5.inserirFilho(n11);
 		n2.inserirFilho(n5);
 
 		NoArvore<Integer> n1 = new NoArvore<Integer>(1);
@@ -33,6 +33,7 @@ public class TesteDaArvoreNAria {
 
 		Arvore<Integer> a = new Arvore<>();
 		a.setRaiz(n1);
+		
 		System.out.println(a.getAltura());
 		System.out.println(a.getNivelNo(n11.getInfo()));
 		System.out.println(a.isBalanceado());
