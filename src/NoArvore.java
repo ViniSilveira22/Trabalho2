@@ -9,6 +9,9 @@ public class NoArvore<T> {
 	private static int altura = 0;
     private static int buscadoAltura = -1;
 
+    private static int maior = 0;
+    private static int segundaAltura = 999;
+
     public NoArvore(T info) {
         super();
         this.info = info;
@@ -105,6 +108,15 @@ public class NoArvore<T> {
 		if (altura < index)
 			altura = index;
 		return altura;
+	}
+
+    public boolean isBalanceadoNo() {
+		maior = maiorAlturaArvore(0);
+
+		if (maior - 1 == segundaAltura || maior == segundaAltura) {
+			return true;
+		}
+		return false;
 	}
 
     public NoArvore<T> getFilho() {

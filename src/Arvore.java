@@ -46,4 +46,8 @@ public class Arvore<T> {
 		return raiz.alturaNoBuscado(noProcurado, 0);
 	}
 
+	public boolean isBalanceado() {
+		return raiz.isBalanceadoNo();
+	}
+
 }
